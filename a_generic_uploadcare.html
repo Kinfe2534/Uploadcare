@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Uploadcare Page</title>
+        <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+        <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.lang.en.min.js"></script>
+        <script>
+            uploadcare.registerTab('preview', uploadcareTabEffects)
+        </script>
+    </head>
+    <body>
+        <h2>a. Standard file picker allowing for all the services</h2>
+        <input
+    type="hidden"
+    role="uploadcare-uploader"
+    data-public-key="b04c4bcbd68df83a407f"
+    data-tabs="all"
+    data-effects="crop, flip, enhance, rotate, blur, grayscale, mirror, sharp, invert"
+/>
+
+    </body>
+</html>
