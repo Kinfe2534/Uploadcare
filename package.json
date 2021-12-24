@@ -1,0 +1,30 @@
+{
+  "name": "uploadcare",
+  "version": "1.0.0",
+  "description": "upload care bunch of htmls",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinfe2534/Uploadcare.git"
+  },
+  "keywords": [
+    "uploadcare"
+  ],
+  "author": "kinfe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kinfe2534/Uploadcare/issues"
+  },
+  "homepage": "https://github.com/Kinfe2534/Uploadcare#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "@uploadcare/upload-client": "^2.2.0",
+    "uploadcare-widget": "^3.16.0"
+  }
+}
