@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Kinfe2534/Uploadcare#readme",
   "devDependencies": {
+    "bootstrap": "^5.1.3",
     "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
