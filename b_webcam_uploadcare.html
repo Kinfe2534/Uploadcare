@@ -2,11 +2,40 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Uploadcare Page</title>
+
+         <!--uploadcare cdn-->
+        <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.lang.en.min.js"></script>
         <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+        
     </head>
     <body>
         <h2>b. Make a file picker which picks files from a webcam and uploads it as uploadcare and log the response object</h2>
+         <!-- input element with proper config-->
+        <input
+            id="uploader"
+            type="hidden"
+            role="uploadcare-uploader"
+            data-public-key="b04c4bcbd68df83a407f"
+            data-tabs="camera"
+            data-effects="crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert"
+    />
+         <!--script to log the response to the console-->
+        <script >
+            const widget = uploadcare.Widget("#uploader");
+                widget.onUploadComplete(fileInfo => {
+                // log the response object to the console
+                console.log(fileInfo);
+                });
+
+        </script>
+
+        <!--style css and js links-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     </body>
 </html>

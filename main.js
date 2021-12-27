@@ -1,4 +1,4 @@
-import uploadcare from 'uploadcare-widget'
+//import uploadcare from 'uploadcare-widget'
 
 const widget = uploadcare.Widget("#uploader", { publicKey: 'b04c4bcbd68df83a407f' });
 widget.onUploadComplete(fileInfo => {
