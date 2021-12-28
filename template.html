@@ -5,17 +5,6 @@
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Uploadcare Page</title>
-        <script>
-            UPLOADCARE_LOCALE_TRANSLATIONS = {
-                buttons: {
-                    choose: {
-                        files: {
-                            one: 'Choose a Video'
-                        }
-                    }
-                }
-            }
-        </script>
 
          <!--uploadcare cdn-->
         <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.lang.en.min.js"></script>
@@ -24,23 +13,15 @@
         
     </head>
     <body>
-        <h2>e. Make a file picker that only allows video recording camera mode - input type= camera / image</h2>
+        <h2>Uploadcare Template</h2>
          <!-- input element with proper config-->
-         <!-- video file types and MIME link-->
-        <div><a href="https://www.lifewire.com/file-extensions-and-mime-types-3469109" target="_blank">Common Video File Extensions and MIMe types link</a></div>
-        <!--data-file-tabs and data-input
-         data-file-types="mp4 mp2 mpa mpe mpeg mpg mpv2 mov qt lsf lsx asf asr asx avi movie"
-            data-input-accept-types="video/mpeg video/quicktime video/x-la-asf video/x-ms-asf video/x-msvideo video/x-sgi-movie video/mp4"
-  
-        -->
         <input
             id="uploader"
             type="hidden"
             role="uploadcare-uploader"
             data-public-key="b04c4bcbd68df83a407f"
-            data-tabs="file"
-            data-file-types=""
-            data-input-accept-types="video/*"
+            data-tabs="all"
+            data-effects="crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert"
     />
          <!--script to log the response to the console-->
         <script >

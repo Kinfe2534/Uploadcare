@@ -1,12 +1,39 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Uploadcare Page</title>
+
+         <!--uploadcare cdn-->
+        <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.lang.en.min.js"></script>
         <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+        
     </head>
     <body>
         <h2>g. Create a file picker that uploads content by dragging files onto a div and shows a progress bar - dropzone style uploader</h2>
+         <!-- drag and drop div element element with proper config-->
+         <div id="drag_div" style="border-width: 5px; border-style: dashed; width: 500px; height: 100px;">
+        
+        <p id="drag_p" style="font-size: medium; font-weight: 200; color: brown; text-align: center;">Drag and Drop Files Here</p>
+        
+        </div>
+        
+         <!--script to log the response to the console-->
+        <script >
+            var browser_supports_dragdrop = uploadcare.dragdrop.support;
+            var $ =uploadcare.jQuery;
+            uploadcare.dragdrop.uploadDrop($("#drag_p"), function(files) {
+                    files; // array
+                    }, {multiple: true});
+        </script>
+
+        <!--style css and js links-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     </body>
 </html>
