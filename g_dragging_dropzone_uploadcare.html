@@ -16,19 +16,24 @@
     <body>
         <h2>g. Create a file picker that uploads content by dragging files onto a div and shows a progress bar - dropzone style uploader</h2>
          <!-- drag and drop div element element with proper config-->
-         <div id="drag_div" style="border-width: 5px; border-style: dashed; width: 500px; height: 100px;">
+         <h3 id="drag_p" style="font-size: medium; font-weight: 200; color: brown; text-align: center;">Drag and Drop Files Here</h3>
         
-        <p id="drag_p" style="font-size: medium; font-weight: 200; color: brown; text-align: center;">Drag and Drop Files Here</p>
+         <div  id="drag_div" style="border-width: 5px; border-style: dashed; width: 500px; height: 100px;">
+        
         
         </div>
+        <div id="dragged_files"></div>
         
          <!--script to log the response to the console-->
         <script >
-            var browser_supports_dragdrop = uploadcare.dragdrop.support;
+          //  var browser_supports_dragdrop = uploadcare.dragdrop.support;
             var $ =uploadcare.jQuery;
-            uploadcare.dragdrop.uploadDrop($("#drag_p"), function(files) {
-                    files; // array
+          var drag=  uploadcare.dragdrop.uploadDrop($("#drag_div"), function(files) {
+                console.log(" Drag and Drop done");
+                console.log(files);
+                
                     }, {multiple: true});
+                    drag.done(console.log("drag done"));
         </script>
 
         <!--style css and js links-->

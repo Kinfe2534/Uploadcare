@@ -15,19 +15,20 @@
     <body>
         <h2>f. Create a file picker that is inline to the page and fills a div onload, already loaded into a div, no button to click to launch</h2>
          <!-- input element with proper config-->
-        <input
-            id="uploader"
-            type="hidden"
-            role="uploadcare-uploader"
-            data-public-key="b04c4bcbd68df83a407f"
-            data-tabs="all"
-            data-effects="crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert"
-    />
+         <div ></div>
+         
+         <div id="inline_div">
+        
          <!--script to log the response to the console-->
         <script >
-            const widget = uploadcare.Widget("#uploader");
-            // automatically opens the uploadcare dialogue
-            var dialog = widget.openDialog();
+            var panel = uploadcare.openPanel("#inline_div",null,{
+                        publicKey: 'b04c4bcbd68df83a407f',
+                        tabs: "file camera url facebook gdrive gphotos",
+                    });
+                panel.done(function(result){
+                    console.log("Panel Done");
+                    console.log(result);
+                });
 
         </script>
 
