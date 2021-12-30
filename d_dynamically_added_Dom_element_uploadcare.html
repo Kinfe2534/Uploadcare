@@ -1,12 +1,68 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Uploadcare Page</title>
+
+         <!--uploadcare cdn-->
+        <script src="https://ucarecdn.com/libs/widget-tab-effects/1.x/uploadcare.tab-effects.lang.en.min.js"></script>
         <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+        
     </head>
     <body>
         <h2>d. Add a file picker to a dynamically added element to the dom, upload file and log to console</h2>
+         <!-- input element with proper config-->
+        <input
+            id="uploader"
+            type="hidden"
+            role="uploadcare-uploader"
+            data-clearable="true"
+            data-public-key="b04c4bcbd68df83a407f"
+            data-tabs="all"
+            data-effects="crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert"
+    />
+         <!--script to log the response to the console-->
+        <script >
+            let dynamic_uploadcare= document.createElement("input");
+            dynamic_uploadcare.setAttribute("id","uploader");
+            dynamic_uploadcare.setAttribute("type","hidden");
+            dynamic_uploadcare.setAttribute("role","uploadcare-uploader");
+            dynamic_uploadcare.setAttribute("data-clearable","true");
+            dynamic_uploadcare.setAttribute("data-public-key","b04c4bcbd68df83a407f");
+            dynamic_uploadcare.setAttribute("data-tabs","all");
+            dynamic_uploadcare.setAttribute("data-effects","crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert");
+            
+    // use mutation observer to check the presence of the dynamically added element and add uploadcare
+        let mutation_target_element= document.querySelector("body");
+        let mutation_config = { attributes: true, childList: true, subtree: true };
+        let observer = new MutationObserver(function(){
+
+            var check= document.getElementById("dynamic_element");
+            if(check!=null){
+                check.appendChild(dynamic_uploadcare);
+                //disconnect observer
+            observer.disconnect();
+            }
+
+         
+            });
+            observer.observe(mutation_target_element, mutation_config);
+
+        </script>
+        <!-- test script
+            let div=document.createElement("div");
+            div.setAttribute("id","dynamic_element");
+            document.body.appendChild(div)
+
+        -->
+
+        <!--style css and js links-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
     </body>
 </html>

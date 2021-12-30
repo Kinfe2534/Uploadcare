@@ -19,16 +19,18 @@
             id="uploader"
             type="hidden"
             role="uploadcare-uploader"
+            data-clearable="true"
             data-public-key="b04c4bcbd68df83a407f"
             data-tabs="all"
             data-effects="crop, rotate, mirror, flip, enhance, blur, grayscale, sharp, invert"
     />
          <!--script to log the response to the console-->
         <script >
+       // get the uploadcare instance using the id and listen for onUploadComplete event
             const widget = uploadcare.Widget("#uploader");
-                widget.onUploadComplete(fileInfo => {
+                widget.onUploadComplete(responseObj => {
                 // log the response object to the console
-                console.log(fileInfo);
+                console.log(responseObj);
                 });
 
         </script>

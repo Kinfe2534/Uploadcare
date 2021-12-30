@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Uploadcare Page</title>
+        <!--change the default "choose a file" to "choose a video" using Global Variable -->
         <script>
             UPLOADCARE_LOCALE_TRANSLATIONS = {
                 buttons: {
@@ -28,15 +29,13 @@
          <!-- input element with proper config-->
          <!-- video file types and MIME link-->
         <div><a href="https://www.lifewire.com/file-extensions-and-mime-types-3469109" target="_blank">Common Video File Extensions and MIMe types link</a></div>
-        <!--data-file-tabs and data-input
-         data-file-types="mp4 mp2 mpa mpe mpeg mpg mpv2 mov qt lsf lsx asf asr asx avi movie"
-            data-input-accept-types="video/mpeg video/quicktime video/x-la-asf video/x-ms-asf video/x-msvideo video/x-sgi-movie video/mp4"
-  
-        -->
+       
+        <!-- Limit the type of input to videos only using data-input-accept-types=video/*-->
         <input
             id="uploader"
             type="hidden"
             role="uploadcare-uploader"
+            data-clearable="true"
             data-public-key="b04c4bcbd68df83a407f"
             data-tabs="file"
             data-file-types=""
@@ -45,9 +44,9 @@
          <!--script to log the response to the console-->
         <script >
             const widget = uploadcare.Widget("#uploader");
-                widget.onUploadComplete(fileInfo => {
+                widget.onUploadComplete(responseObj => {
                 // log the response object to the console
-                console.log(fileInfo);
+                console.log(responseObj);
                 });
 
         </script>
